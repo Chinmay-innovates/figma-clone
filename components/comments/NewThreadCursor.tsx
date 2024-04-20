@@ -20,8 +20,6 @@ const NewThreadCursor = ({ display }: { display: boolean }) => {
       if (canvas) {
         /**
          * getBoundingClientRect returns the size of an element and its position relative to the viewport
-         *
-         * getBoundingClientRect: https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
          */
         const canvasRect = canvas.getBoundingClientRect();
 

@@ -20,6 +20,7 @@ import {
     ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 import { shortcuts } from '@/constants'
+import { Comments } from './comments/Comments'
 
 
 
@@ -192,7 +193,7 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
             default:
                 break;
         }
-    }, []);
+    }, [undo, redo]);
 
     return (
         <ContextMenu>
@@ -233,7 +234,7 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
                 )}
                 <LiveCursors />
 
-                {/* <Comments />  */}
+                {/* <Comments /> */}
 
             </ContextMenuTrigger>
             <ContextMenuContent className="right-menu-content">
@@ -248,6 +249,7 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
                     </ContextMenuItem>
                 ))}
             </ContextMenuContent>
+
         </ContextMenu>
     )
 }

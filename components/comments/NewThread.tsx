@@ -15,8 +15,8 @@ import { ComposerSubmitComment } from "@liveblocks/react-comments/primitives";
 import { useCreateThread } from "@/liveblocks.config";
 import { useMaxZIndex } from "@/lib/useMaxZIndex";
 
-import PinnedComposer from "./PinnedComposer";
 import NewThreadCursor from "./NewThreadCursor";
+import PinnedComposer from "./PinnedComposer";
 
 type ComposerCoords = null | { x: number; y: number };
 
@@ -32,8 +32,6 @@ export const NewThread = ({ children }: Props) => {
 
   /**
    * We're using the useCreateThread hook to create a new thread.
-   *
-   * useCreateThread: https://liveblocks.io/docs/api-reference/liveblocks-react#useCreateThread
    */
   const createThread = useCreateThread();
 
@@ -198,9 +196,7 @@ export const NewThread = ({ children }: Props) => {
       {/**
        * Slot is used to wrap the children of the NewThread component
        * to allow us to add a click event listener to the children
-       *
-       * Slot: https://www.radix-ui.com/primitives/docs/utilities/slot
-       *
+       * 
        * Disclaimer: We don't have to download this package specifically,
        * it's already included when we install Shadcn
        */}
@@ -220,7 +216,6 @@ export const NewThread = ({ children }: Props) => {
         /**
          * Portal.Root is used to render the composer outside of the NewThread component to avoid z-index issuess
          *
-         * Portal.Root: https://www.radix-ui.com/primitives/docs/utilities/portal
          */
         <Portal.Root
           className='absolute left-0 top-0'

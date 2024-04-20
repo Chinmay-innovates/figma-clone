@@ -15,7 +15,8 @@ const adjectives = [
   "Sunny",
   "Sparkling",
   "Bright",
-  "Shining",
+  "Dazzling",
+  "Cool",
 ];
 
 const animals = [
@@ -32,6 +33,7 @@ const animals = [
   "Monkey",
   "Panda",
   "Crocodile",
+  "Cat",
 ];
 
 export function cn(...inputs: ClassValue[]) {

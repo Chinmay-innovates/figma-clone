@@ -75,10 +75,6 @@ const Home = () => {
    * useMutation is a hook provided by Liveblocks that allows you to perform
    * mutations on liveblocks data.
    *
-   * useMutation: https://liveblocks.io/docs/api-reference/liveblocks-react#useMutation
-   * delete: https://liveblocks.io/docs/api-reference/liveblocks-client#LiveMap.delete
-   * get: https://liveblocks.io/docs/api-reference/liveblocks-client#LiveMap.get
-   *
    * We're using this mutation to delete a shape from the key-value store when
    * the user deletes a shape from the canvas.
    */
@@ -86,8 +82,6 @@ const Home = () => {
     /**
      * canvasObjects is a Map that contains all the shapes in the key-value.
      * Like a store. We can create multiple stores in liveblocks.
-     *
-     * delete: https://liveblocks.io/docs/api-reference/liveblocks-client#LiveMap.delete
      */
     const canvasObjects = storage.get("canvasObject");
     canvasObjects.delete(shapeId);
@@ -96,10 +90,6 @@ const Home = () => {
   /**
    * deleteAllShapes is a mutation that deletes all the shapes from the
    * key-value store of liveblocks.
-   *
-   * delete: https://liveblocks.io/docs/api-reference/liveblocks-client#LiveMap.delete
-   * get: https://liveblocks.io/docs/api-reference/liveblocks-client#LiveMap.get
-   *
    * We're using this mutation to delete all the shapes from the key-value store when the user clicks on the reset button.
    */
   const deleteAllShapes = useMutation(({ storage }) => {
@@ -142,8 +132,6 @@ const Home = () => {
     const canvasObjects = storage.get("canvasObject");
     /**
      * set is a method provided by Liveblocks that allows you to set a value
-     *
-     * set: https://liveblocks.io/docs/api-reference/liveblocks-client#LiveMap.set
      */
     canvasObjects.set(objectId, shapeData);
   }, []);
@@ -214,9 +202,6 @@ const Home = () => {
     /**
      * listen to the mouse down event on the canvas which is fired when the
      * user clicks on the canvas
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("mouse:down", (options) => {
       handleCanvasMouseDown({
@@ -231,9 +216,6 @@ const Home = () => {
     /**
      * listen to the mouse move event on the canvas which is fired when the
      * user moves the mouse on the canvas
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("mouse:move", (options) => {
       handleCanvaseMouseMove({
@@ -249,9 +231,6 @@ const Home = () => {
     /**
      * listen to the mouse up event on the canvas which is fired when the
      * user releases the mouse on the canvas
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("mouse:up", () => {
       handleCanvasMouseUp({
@@ -269,9 +248,6 @@ const Home = () => {
      * listen to the path created event on the canvas which is fired when
      * the user creates a path on the canvas using the freeform drawing
      * mode
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("path:created", (options) => {
       handlePathCreated({
@@ -285,9 +261,6 @@ const Home = () => {
      * when the user modifies an object on the canvas. Basically, when the
      * user changes the width, height, color etc properties/attributes of
      * the object or moves the object on the canvas.
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("object:modified", (options) => {
       handleCanvasObjectModified({
@@ -299,9 +272,6 @@ const Home = () => {
     /**
      * listen to the object moving event on the canvas which is fired
      * when the user moves an object on the canvas.
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas?.on("object:moving", (options) => {
       handleCanvasObjectMoving({
@@ -312,9 +282,6 @@ const Home = () => {
     /**
      * listen to the selection created event on the canvas which is fired
      * when the user selects an object on the canvas.
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("selection:created", (options) => {
       handleCanvasSelectionCreated({
@@ -327,9 +294,6 @@ const Home = () => {
     /**
      * listen to the scaling event on the canvas which is fired when the
      * user scales an object on the canvas.
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("object:scaling", (options) => {
       handleCanvasObjectScaling({
@@ -341,9 +305,6 @@ const Home = () => {
     /**
      * listen to the mouse wheel event on the canvas which is fired when
      * the user scrolls the mouse wheel on the canvas.
-     *
-     * Event inspector: http://fabricjs.com/events
-     * Event list: http://fabricjs.com/docs/fabric.Canvas.html#fire
      */
     canvas.on("mouse:wheel", (options) => {
       handleCanvasZoom({
@@ -388,8 +349,6 @@ const Home = () => {
        * dispose is a method provided by Fabric that allows you to dispose
        * the canvas. It clears the canvas and removes all the event
        * listeners
-       *
-       * dispose: http://fabricjs.com/docs/fabric.Canvas.html#dispose
        */
       canvas.dispose();
 

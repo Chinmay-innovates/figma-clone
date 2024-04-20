@@ -24,8 +24,6 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
   /**
    * memoize the result of this function so that it doesn't change on every render but only when the thread changes
    * Memo is used to optimize performance and avoid unnecessary re-renders.
-   *
-   * useMemo: https://react.dev/reference/react/useMemo
    */
 
   const memoizedContent = useMemo(
@@ -74,7 +72,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
         ) : null}
       </div>
     ),
-    [thread.comments.length, minimized]
+    [thread.comments.length]
   );
 
   return <>{memoizedContent}</>;

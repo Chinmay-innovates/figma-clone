@@ -9,13 +9,13 @@ import { LiveMap } from "@liveblocks/client";
 export function Room({ children }: { children: ReactNode }) {
   return (
     <RoomProvider id="my-room" initialPresence={{
-      cursor: null,
       cursorColor: null,
-      editingText: null
+      editingText: null,
+      cursor: null,
     }}
-    initialStorage={{
-      canvasObject : new LiveMap() 
-    }}
+      initialStorage={{
+        canvasObject: new LiveMap()
+      }}
     >
       <ClientSideSuspense fallback={<Loader />}>
         {() => children}
