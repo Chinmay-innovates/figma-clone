@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h3 align="center">Real Time Figma Clone</h3>
+  <h3 align="center">Real Time Collaboration tool -   Figma Clone</h3>
 
 </div>
 
@@ -15,7 +15,6 @@
 
 A minimalistic Figma clone to show how to add real-world features like live collaboration with cursor chat, comments, reactions, and drawing designs (shapes, image upload) on the canvas using fabric.js.
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over 27k+ members. It's a place where people help each other out.
 
 
 
@@ -91,3 +90,7 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+deployed application:
+https://next-figma-ts-clone.vercel.app/
+
